@@ -98,8 +98,8 @@
 		D0EFF3BC22E3DC8C00EABA21 /* VC */ = {
 			isa = PBXGroup;
 			children = (
-				D02878C422DA67E4002FA3FF /* ViewController.swift */,
 				D0EFF3AE22E3CF9A00EABA21 /* TodoTableViewController.swift */,
+				D02878C422DA67E4002FA3FF /* ViewController.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";

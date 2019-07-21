@@ -344,9 +344,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             return
         }
         
+        guard let exercise = trainingLabel.text, !exercise.isEmpty else {
+            return
+        }
+        
+        
         let todo = Todo(context: managedContext)
         todo.title = title
         todo.date = Date()
+        todo.exercise = trainingLabel.text
+        
         
         do {
             try managedContext.save()
@@ -358,9 +365,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     
+    /*
+    func getCurrentDateTime(){
+        let formatter = DateFormatter()
+        formatter.dateFormat = "dd.MM.yy"
+        dateAndTime = formatter.string(from: Date ())
+        
+    }
+    */
+    
     
     
 }
+
+
 
 
 

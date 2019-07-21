@@ -11,6 +11,8 @@ import CoreData
 
 class TodoTableViewController: UITableViewController {
     
+    
+    
     // MARK: - Properties
     
     var resultsController: NSFetchedResultsController<Todo>!
@@ -22,7 +24,7 @@ class TodoTableViewController: UITableViewController {
         
         // Request
         let request: NSFetchRequest<Todo> = Todo.fetchRequest()
-        let sortDescriptors = NSSortDescriptor(key: "date", ascending: true)
+        let sortDescriptors = NSSortDescriptor(key: "date", ascending: false)
         
         // Init
         request.sortDescriptors = [sortDescriptors]
@@ -51,7 +53,11 @@ class TodoTableViewController: UITableViewController {
         
         // Configure the cell...
         let todo = resultsController.object(at: indexPath)
-        cell.textLabel?.text = todo.title
+        
+        
+        cell.textLabel?.text =  "\(todo.exercise!) 5 x \(todo.title!)"
+       
+        
         
         return cell
     }
@@ -78,7 +84,7 @@ class TodoTableViewController: UITableViewController {
     }
     
     
-    
+    /*
     override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Check") { (action, view, completeion) in
             // TODO: Delete todo
@@ -88,6 +94,7 @@ class TodoTableViewController: UITableViewController {
         
         return UISwipeActionsConfiguration(actions: [action])
     }
+    */
     
     
     // MARK: - Navigation
