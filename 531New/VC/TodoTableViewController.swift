@@ -55,7 +55,7 @@ class TodoTableViewController: UITableViewController {
         let todo = resultsController.object(at: indexPath)
         
         
-        cell.textLabel?.text =  "\(todo.exercise!) 5 x \(todo.title!)"
+        cell.textLabel?.text =  "\(todo.exercise!)   5 x \(todo.title!)"
        
         
         

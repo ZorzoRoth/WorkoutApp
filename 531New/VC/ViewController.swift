@@ -37,6 +37,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var setThreeSwitch: UISwitch!
     @IBOutlet weak var setFourSwitch: UISwitch!
     @IBOutlet weak var setFiveSwitch: UISwitch!
+
     
     let pickerData = [["Squat","Overhead Press","Deadlift","Bench Press"],["Week 1","Week 2","Week 3" ,"Week 4"]]
     
@@ -353,6 +354,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         todo.title = title
         todo.date = Date()
         todo.exercise = trainingLabel.text
+        
         
         
         do {
