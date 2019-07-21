@@ -32,7 +32,7 @@ class TodoTableViewController: UITableViewController {
             sectionNameKeyPath: nil,
             cacheName: nil
         )
-        
+        resultsController.delegate = self
         // Fetch
         do {
             try resultsController.performFetch()
@@ -61,7 +61,16 @@ class TodoTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let action = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completeion) in
             // TODO: Delete todo
-            completeion(true)
+            let todo = self.resultsController.object(at: indexPath)
+            self.resultsController.managedObjectContext.delete(todo)
+            do {
+                try self.resultsController.managedObjectContext.save()
+                completeion(true)
+            } catch {
+                print("delete failed: \(error)")
+                completeion(false)
+            }
+            
         }
         action.backgroundColor = .red
         
@@ -87,9 +96,41 @@ class TodoTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 
         if let _ = sender as? UIBarButtonItem, let vc = segue.destination as? ViewController {
-            vc.managedContext = coreDataStack.managedContext
+            vc.managedContext = resultsController.managedObjectContext
         }
     }
     
 
+}
+
+extension TodoTableViewController: NSFetchedResultsControllerDelegate {
+    func controllerWillChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        
+        tableView.beginUpdates()
+        
+    }
+    
+    func controllerDidChangeContent(_ controller: NSFetchedResultsController<NSFetchRequestResult>) {
+        tableView.endUpdates()
+        
+    }
+    
+    func controller(_ controller: NSFetchedResultsController<NSFetchRequestResult>, didChange anObject: Any, at indexPath: IndexPath?, for type: NSFetchedResultsChangeType, newIndexPath: IndexPath?) {
+        switch type {
+        case .insert:
+            if let indexPath = newIndexPath {
+                tableView.insertRows(at: [indexPath], with: .automatic)
+            }
+            
+        case .delete:
+            if let indexPath = indexPath {
+                tableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+            
+        default:
+            break
+        }
+    }
+    
+    
 }
