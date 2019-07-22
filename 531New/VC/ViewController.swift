@@ -25,12 +25,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var myPicker: UIPickerView!
     
-    @IBOutlet weak var setOneWeight: UITextField!
-    @IBOutlet weak var setTwoWeight: UITextField!
-    @IBOutlet weak var setThreeWeight: UITextField!
-    @IBOutlet weak var setFourWeight: UITextField!
-    @IBOutlet weak var setFiveWeight: UITextField!
-    
+
+    @IBOutlet weak var setOneWeight: UIButton!
+    @IBOutlet weak var setTwoWeight: UIButton!
+    @IBOutlet weak var setThreeWeight: UIButton!
+    @IBOutlet weak var setFourWeight: UIButton!
+    @IBOutlet weak var setFiveWeight: UIButton!
     
     @IBOutlet weak var setOneSwitch: UISwitch!
     @IBOutlet weak var setTwoSwitch: UISwitch!
@@ -111,6 +111,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         updateSetLabel()
     }
     
+    
 
     
     func updateSetLabel() {
@@ -135,8 +136,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let week = pickerData[1][myPicker.selectedRow(inComponent: 1)]
         trainingLabel.text = exercise
         weekLabel.text =  week
-        
-        
+
         
         
         // Squat
@@ -146,12 +146,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         if exercise == "Squat" && week == "Week 1" {
             
             squatWeekOneWeight = "5 x " + String(ceil(squatWeight.weekOne()))
-            setOneWeight.text = squatWeekOneWeight
-            setTwoWeight.text = squatWeekOneWeight
-            setThreeWeight.text = squatWeekOneWeight
-            setFourWeight.text = squatWeekOneWeight
-            setFiveWeight.text = squatWeekOneWeight
-
+            setOneWeight.setTitle(squatWeekOneWeight, for: .normal)
+            setTwoWeight.setTitle(squatWeekOneWeight, for: .normal)
+            setThreeWeight.setTitle(squatWeekOneWeight, for: .normal)
+            setFourWeight.setTitle(squatWeekOneWeight, for: .normal)
+            setFiveWeight.setTitle(squatWeekOneWeight, for: .normal)
             resetSwitches()
             
         }
@@ -159,31 +158,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else if exercise == "Squat" && week == "Week 2" {
             
             squatWeekTwoWeight = "3 x " + String(ceil(squatWeight.weekTwo()))
-            setOneWeight.text = squatWeekTwoWeight
-            setTwoWeight.text = squatWeekTwoWeight
-            setThreeWeight.text = squatWeekTwoWeight
-            setFourWeight.text = squatWeekTwoWeight
-            setFiveWeight.text = squatWeekTwoWeight
+            setOneWeight.setTitle(squatWeekTwoWeight, for: .normal)
+            setTwoWeight.setTitle(squatWeekTwoWeight, for: .normal)
+            setThreeWeight.setTitle(squatWeekTwoWeight, for: .normal)
+            setFourWeight.setTitle(squatWeekTwoWeight, for: .normal)
+            setFiveWeight.setTitle(squatWeekTwoWeight, for: .normal)
             resetSwitches()
         }
         
         else if exercise == "Squat" && week == "Week 3" {
             squatWeekThreeWeight = "2 x " + String(ceil(squatWeight.weekThree()))
-            setOneWeight.text = squatWeekThreeWeight
-            setTwoWeight.text = squatWeekThreeWeight
-            setThreeWeight.text = squatWeekThreeWeight
-            setFourWeight.text = squatWeekThreeWeight
-            setFiveWeight.text = squatWeekThreeWeight
+            setOneWeight.setTitle(squatWeekThreeWeight, for: .normal)
+            setTwoWeight.setTitle(squatWeekThreeWeight, for: .normal)
+            setThreeWeight.setTitle(squatWeekThreeWeight, for: .normal)
+            setFourWeight.setTitle(squatWeekThreeWeight, for: .normal)
+            setFiveWeight.setTitle(squatWeekThreeWeight, for: .normal)
             resetSwitches()
         }
         
         else if exercise == "Squat" && week == "Week 4" {
             squatWeekFourWeight = "1 x " + String(ceil(squatWeight.weekFour()))
-            setOneWeight.text = squatWeekFourWeight
-            setTwoWeight.text = squatWeekFourWeight
-            setThreeWeight.text = squatWeekFourWeight
-            setFourWeight.text = squatWeekFourWeight
-            setFiveWeight.text = squatWeekFourWeight
+            setOneWeight.setTitle(squatWeekFourWeight, for: .normal)
+            setTwoWeight.setTitle(squatWeekFourWeight, for: .normal)
+            setThreeWeight.setTitle(squatWeekFourWeight, for: .normal)
+            setFourWeight.setTitle(squatWeekFourWeight, for: .normal)
+            setFiveWeight.setTitle(squatWeekFourWeight, for: .normal)
             resetSwitches()
         }
         
@@ -193,11 +192,11 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else if exercise == "Overhead Press" && week == "Week 1" {
             
             overheadpressWeekOneWeight = "5 x " + String(ceil(overheadpressWeight.weekOne()))
-            setOneWeight.text = overheadpressWeekOneWeight
-            setTwoWeight.text = overheadpressWeekOneWeight
-            setThreeWeight.text = overheadpressWeekOneWeight
-            setFourWeight.text = overheadpressWeekOneWeight
-            setFiveWeight.text = overheadpressWeekOneWeight
+            setOneWeight.setTitle(overheadpressWeekOneWeight, for: .normal)
+            setTwoWeight.setTitle(overheadpressWeekOneWeight, for: .normal)
+            setThreeWeight.setTitle(overheadpressWeekOneWeight, for: .normal)
+            setFourWeight.setTitle(overheadpressWeekOneWeight, for: .normal)
+            setFiveWeight.setTitle(overheadpressWeekOneWeight, for: .normal)
             resetSwitches()
             
         }
@@ -205,31 +204,31 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         else if exercise == "Overhead Press" && week == "Week 2" {
             
             overheadpressWeekTwoWeight = "3 x " + String(ceil(overheadpressWeight.weekTwo()))
-            setOneWeight.text = overheadpressWeekTwoWeight
-            setTwoWeight.text = overheadpressWeekTwoWeight
-            setThreeWeight.text = overheadpressWeekTwoWeight
-            setFourWeight.text = overheadpressWeekTwoWeight
-            setFiveWeight.text = overheadpressWeekTwoWeight
+            setOneWeight.setTitle(overheadpressWeekTwoWeight, for: .normal)
+            setTwoWeight.setTitle(overheadpressWeekTwoWeight, for: .normal)
+            setThreeWeight.setTitle(overheadpressWeekTwoWeight, for: .normal)
+            setFourWeight.setTitle(overheadpressWeekTwoWeight, for: .normal)
+            setFiveWeight.setTitle(overheadpressWeekTwoWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Overhead Press" && week == "Week 3" {
             overheadpressWeekThreeWeight = "2 x " + String(ceil(overheadpressWeight.weekThree()))
-            setOneWeight.text = overheadpressWeekThreeWeight
-            setTwoWeight.text = overheadpressWeekThreeWeight
-            setThreeWeight.text = overheadpressWeekThreeWeight
-            setFourWeight.text = overheadpressWeekThreeWeight
-            setFiveWeight.text = overheadpressWeekThreeWeight
+            setOneWeight.setTitle(overheadpressWeekThreeWeight, for: .normal)
+            setTwoWeight.setTitle(overheadpressWeekThreeWeight, for: .normal)
+            setThreeWeight.setTitle(overheadpressWeekThreeWeight, for: .normal)
+            setFourWeight.setTitle(overheadpressWeekThreeWeight, for: .normal)
+            setFiveWeight.setTitle(overheadpressWeekThreeWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Overhead Press" && week == "Week 4" {
             overheadpressWeekFourWeight = "1 x " + String(ceil(overheadpressWeight.weekFour()))
-            setOneWeight.text = overheadpressWeekFourWeight
-            setTwoWeight.text = overheadpressWeekFourWeight
-            setThreeWeight.text = overheadpressWeekFourWeight
-            setFourWeight.text = overheadpressWeekFourWeight
-            setFiveWeight.text = overheadpressWeekFourWeight
+            setOneWeight.setTitle(overheadpressWeekFourWeight, for: .normal)
+            setTwoWeight.setTitle(overheadpressWeekFourWeight, for: .normal)
+            setThreeWeight.setTitle(overheadpressWeekFourWeight, for: .normal)
+            setFourWeight.setTitle(overheadpressWeekFourWeight, for: .normal)
+            setFiveWeight.setTitle(overheadpressWeekFourWeight, for: .normal)
             resetSwitches()
         }
             
@@ -237,42 +236,42 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         else if exercise == "Deadlift" && week == "Week 1" {
             deadliftWeekOneWeight = "5 x " + String(ceil(deadliftWeight.weekOne()))
-            setOneWeight.text = deadliftWeekOneWeight
-            setTwoWeight.text = deadliftWeekOneWeight
-            setThreeWeight.text = deadliftWeekOneWeight
-            setFourWeight.text = deadliftWeekOneWeight
-            setFiveWeight.text = deadliftWeekOneWeight
+            setOneWeight.setTitle(deadliftWeekOneWeight, for: .normal)
+            setTwoWeight.setTitle(deadliftWeekOneWeight, for: .normal)
+            setThreeWeight.setTitle(deadliftWeekOneWeight, for: .normal)
+            setFourWeight.setTitle(deadliftWeekOneWeight, for: .normal)
+            setFiveWeight.setTitle(deadliftWeekOneWeight, for: .normal)
             resetSwitches()
             
         }
             
         else if exercise == "Deadlift" && week == "Week 2" {
             deadliftWeekTwoWeight = "3 x " + String(ceil(deadliftWeight.weekTwo()))
-            setOneWeight.text = deadliftWeekTwoWeight
-            setTwoWeight.text = deadliftWeekTwoWeight
-            setThreeWeight.text = deadliftWeekTwoWeight
-            setFourWeight.text = deadliftWeekTwoWeight
-            setFiveWeight.text = deadliftWeekTwoWeight
+            setOneWeight.setTitle(deadliftWeekTwoWeight, for: .normal)
+            setTwoWeight.setTitle(deadliftWeekTwoWeight, for: .normal)
+            setThreeWeight.setTitle(deadliftWeekTwoWeight, for: .normal)
+            setFourWeight.setTitle(deadliftWeekTwoWeight, for: .normal)
+            setFiveWeight.setTitle(deadliftWeekTwoWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Deadlift" && week == "Week 3" {
             deadliftWeekThreeWeight = "2 x " + String(ceil(deadliftWeight.weekThree()))
-            setOneWeight.text = deadliftWeekThreeWeight
-            setTwoWeight.text = deadliftWeekThreeWeight
-            setThreeWeight.text = deadliftWeekThreeWeight
-            setFourWeight.text = deadliftWeekThreeWeight
-            setFiveWeight.text = deadliftWeekThreeWeight
+            setOneWeight.setTitle(deadliftWeekThreeWeight, for: .normal)
+            setTwoWeight.setTitle(deadliftWeekThreeWeight, for: .normal)
+            setThreeWeight.setTitle(deadliftWeekThreeWeight, for: .normal)
+            setFourWeight.setTitle(deadliftWeekThreeWeight, for: .normal)
+            setFiveWeight.setTitle(deadliftWeekThreeWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Deadlift" && week == "Week 4" {
             deadliftWeekFourWeight = "1 x " + String(ceil(deadliftWeight.weekFour()))
-            setOneWeight.text = deadliftWeekFourWeight
-            setTwoWeight.text = deadliftWeekFourWeight
-            setThreeWeight.text = deadliftWeekFourWeight
-            setFourWeight.text = deadliftWeekFourWeight
-            setFiveWeight.text = deadliftWeekFourWeight
+            setOneWeight.setTitle(deadliftWeekFourWeight, for: .normal)
+            setTwoWeight.setTitle(deadliftWeekFourWeight, for: .normal)
+            setThreeWeight.setTitle(deadliftWeekFourWeight, for: .normal)
+            setFourWeight.setTitle(deadliftWeekFourWeight, for: .normal)
+            setFiveWeight.setTitle(deadliftWeekFourWeight, for: .normal)
             resetSwitches()
         }
         
@@ -280,42 +279,43 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         else if exercise == "Bench Press" && week == "Week 1" {
             benchpressWeekOneWeight = "5 x " + String(ceil(benchpressWeight.weekOne()))
-            setOneWeight.text = benchpressWeekOneWeight
-            setTwoWeight.text = benchpressWeekOneWeight
-            setThreeWeight.text = benchpressWeekOneWeight
-            setFourWeight.text = benchpressWeekOneWeight
-            setFiveWeight.text = benchpressWeekOneWeight
+            setOneWeight.setTitle(benchpressWeekOneWeight, for: .normal)
+            setTwoWeight.setTitle(benchpressWeekOneWeight, for: .normal)
+            setThreeWeight.setTitle(benchpressWeekOneWeight, for: .normal)
+            setFourWeight.setTitle(benchpressWeekOneWeight, for: .normal)
+            setFiveWeight.setTitle(benchpressWeekOneWeight, for: .normal)
             resetSwitches()
             
         }
             
         else if exercise == "Bench Press" && week == "Week 2" {
             benchpressWeekTwoWeight = "3 x " + String(ceil(benchpressWeight.weekTwo()))
-            setOneWeight.text = benchpressWeekTwoWeight
-            setTwoWeight.text = benchpressWeekTwoWeight
-            setThreeWeight.text = benchpressWeekTwoWeight
-            setFourWeight.text = benchpressWeekTwoWeight
-            setFiveWeight.text = benchpressWeekTwoWeight
+            setOneWeight.setTitle(benchpressWeekTwoWeight, for: .normal)
+            setTwoWeight.setTitle(benchpressWeekTwoWeight, for: .normal)
+            setThreeWeight.setTitle(benchpressWeekTwoWeight, for: .normal)
+            setFourWeight.setTitle(benchpressWeekTwoWeight, for: .normal)
+            setFiveWeight.setTitle(benchpressWeekTwoWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Bench Press" && week == "Week 3" {
             benchpressWeekThreeWeight = "2 x " + String(ceil(benchpressWeight.weekThree()))
-            setOneWeight.text = benchpressWeekThreeWeight
-            setTwoWeight.text = benchpressWeekThreeWeight
-            setThreeWeight.text = benchpressWeekThreeWeight
-            setFourWeight.text = benchpressWeekThreeWeight
-            setFiveWeight.text = benchpressWeekThreeWeight
+            setOneWeight.setTitle(benchpressWeekThreeWeight, for: .normal)
+            setTwoWeight.setTitle(benchpressWeekThreeWeight, for: .normal)
+            setThreeWeight.setTitle(benchpressWeekThreeWeight, for: .normal)
+            setFourWeight.setTitle(benchpressWeekThreeWeight, for: .normal)
+            setFiveWeight.setTitle(benchpressWeekThreeWeight, for: .normal)
             resetSwitches()
         }
             
         else if exercise == "Bench Press" && week == "Week 4" {
             benchpressWeekFourWeight = "1 x " + String(ceil(benchpressWeight.weekFour()))
-            setOneWeight.text = benchpressWeekFourWeight
-            setTwoWeight.text = benchpressWeekFourWeight
-            setThreeWeight.text = benchpressWeekFourWeight
-            setFourWeight.text = benchpressWeekFourWeight
-            setFiveWeight.text = benchpressWeekFourWeight
+            setOneWeight.setTitle(benchpressWeekFourWeight, for: .normal)
+            setTwoWeight.setTitle(benchpressWeekFourWeight, for: .normal)
+            setThreeWeight.setTitle(benchpressWeekFourWeight, for: .normal)
+            setFourWeight.setTitle(benchpressWeekFourWeight, for: .normal)
+            setFiveWeight.setTitle(benchpressWeekFourWeight, for: .normal)
+            
             resetSwitches()
         }
         
@@ -341,8 +341,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBAction func saveWorkoutButton(_ sender: Any) {
-        guard let title = setOneWeight.text, !title.isEmpty else {
-            return
+        guard let title = setOneWeight.currentTitle, !title.isEmpty else {
+           return
         }
         
         guard let exercise = trainingLabel.text, !exercise.isEmpty else {
@@ -375,6 +375,12 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
     }
     */
+    
+    
+
+    @IBAction func setSixWeightButton(_ sender: Any) {
+        
+    }
     
     
     
