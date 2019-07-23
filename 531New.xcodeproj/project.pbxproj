@@ -17,6 +17,7 @@
 		D08C6C4B22DBF39D0074F736 /* OverheadpressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */; };
 		D08C6C4F22DBF3C20074F736 /* BenchModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C6C4E22DBF3C20074F736 /* BenchModel.swift */; };
 		D0BCED9622DBBCFF00EC50AD /* DeadliftModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BCED9522DBBCFF00EC50AD /* DeadliftModel.swift */; };
+		D0CAD52322E7C21500339409 /* SF-Pro-Display-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D0CAD52222E7C21500339409 /* SF-Pro-Display-Regular.otf */; };
 		D0EFF3AF22E3CF9A00EABA21 /* TodoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFF3AE22E3CF9A00EABA21 /* TodoTableViewController.swift */; };
 		D0EFF3B722E3D57900EABA21 /* Todos.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EFF3B522E3D57900EABA21 /* Todos.xcdatamodeld */; };
 		D0EFF3BB22E3D97100EABA21 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EFF3BA22E3D97100EABA21 /* CoreDataStack.swift */; };
@@ -35,6 +36,7 @@
 		D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverheadpressModel.swift; sourceTree = "<group>"; };
 		D08C6C4E22DBF3C20074F736 /* BenchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BenchModel.swift; sourceTree = "<group>"; };
 		D0BCED9522DBBCFF00EC50AD /* DeadliftModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeadliftModel.swift; sourceTree = "<group>"; };
+		D0CAD52222E7C21500339409 /* SF-Pro-Display-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Regular.otf"; sourceTree = "<group>"; };
 		D0EFF3AE22E3CF9A00EABA21 /* TodoTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoTableViewController.swift; sourceTree = "<group>"; };
 		D0EFF3B622E3D57900EABA21 /* Todos.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Todos.xcdatamodel; sourceTree = "<group>"; };
 		D0EFF3BA22E3D97100EABA21 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -82,8 +84,17 @@
 				D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */,
 				D0BCED9522DBBCFF00EC50AD /* DeadliftModel.swift */,
 				D08C6C4E22DBF3C20074F736 /* BenchModel.swift */,
+				D0CAD52522E7C23200339409 /* Fonts */,
 			);
 			path = 531New;
+			sourceTree = "<group>";
+		};
+		D0CAD52522E7C23200339409 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D0CAD52222E7C21500339409 /* SF-Pro-Display-Regular.otf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 		D0EFF3B422E3D56200EABA21 /* CoreData */ = {
@@ -164,6 +175,7 @@
 			files = (
 				D02878CD22DA67E5002FA3FF /* LaunchScreen.storyboard in Resources */,
 				D02878CA22DA67E5002FA3FF /* Assets.xcassets in Resources */,
+				D0CAD52322E7C21500339409 /* SF-Pro-Display-Regular.otf in Resources */,
 				D02878C822DA67E4002FA3FF /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

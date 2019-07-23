@@ -37,6 +37,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBOutlet weak var setThreeSwitch: UISwitch!
     @IBOutlet weak var setFourSwitch: UISwitch!
     @IBOutlet weak var setFiveSwitch: UISwitch!
+    
+    @IBOutlet weak var saveWorkoutButton: UIButton!
+    
 
     
     let pickerData = [["Squat","Overhead Press","Deadlift","Bench Press"],["Week 1","Week 2","Week 3" ,"Week 4"]]
@@ -61,12 +64,18 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     var benchpressWeekThreeWeight = ""
     var benchpressWeekFourWeight = ""
     
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         myPicker.delegate = self
         myPicker.dataSource = self
+        
+        
+        
+        
         
         
         let savedSquatOneRepMax = UserDefaults.standard.object(forKey: "SquatOneRepMaxSaved")
@@ -136,7 +145,10 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         let week = pickerData[1][myPicker.selectedRow(inComponent: 1)]
         trainingLabel.text = exercise
         weekLabel.text =  week
-
+        
+    
+        
+        
         
         
         // Squat
@@ -144,7 +156,6 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         
         
         if exercise == "Squat" && week == "Week 1" {
-            
             squatWeekOneWeight = "5 x " + String(ceil(squatWeight.weekOne()))
             setOneWeight.setTitle(squatWeekOneWeight, for: .normal)
             setTwoWeight.setTitle(squatWeekOneWeight, for: .normal)
@@ -152,6 +163,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setFourWeight.setTitle(squatWeekOneWeight, for: .normal)
             setFiveWeight.setTitle(squatWeekOneWeight, for: .normal)
             resetSwitches()
+            
             
         }
             
@@ -167,6 +179,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         else if exercise == "Squat" && week == "Week 3" {
+            
             squatWeekThreeWeight = "2 x " + String(ceil(squatWeight.weekThree()))
             setOneWeight.setTitle(squatWeekThreeWeight, for: .normal)
             setTwoWeight.setTitle(squatWeekThreeWeight, for: .normal)
@@ -177,6 +190,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         }
         
         else if exercise == "Squat" && week == "Week 4" {
+            
             squatWeekFourWeight = "1 x " + String(ceil(squatWeight.weekFour()))
             setOneWeight.setTitle(squatWeekFourWeight, for: .normal)
             setTwoWeight.setTitle(squatWeekFourWeight, for: .normal)
@@ -315,10 +329,9 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setThreeWeight.setTitle(benchpressWeekFourWeight, for: .normal)
             setFourWeight.setTitle(benchpressWeekFourWeight, for: .normal)
             setFiveWeight.setTitle(benchpressWeekFourWeight, for: .normal)
-            
             resetSwitches()
         }
-        
+           
         
     }
     
@@ -330,6 +343,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         setFourSwitch.isOn = false
         setFiveSwitch.isOn = false
     }
+    
+    
     
     // dismisses the number pad when tapped outside of it's field
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -381,6 +396,8 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     @IBAction func setSixWeightButton(_ sender: Any) {
         
     }
+    
+    
     
     
     
