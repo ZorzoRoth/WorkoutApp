@@ -163,6 +163,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setFourWeight.setTitle(squatWeekOneWeight, for: .normal)
             setFiveWeight.setTitle(squatWeekOneWeight, for: .normal)
             resetSwitches()
+
             
             
         }
@@ -176,6 +177,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setFourWeight.setTitle(squatWeekTwoWeight, for: .normal)
             setFiveWeight.setTitle(squatWeekTwoWeight, for: .normal)
             resetSwitches()
+
         }
         
         else if exercise == "Squat" && week == "Week 3" {
@@ -187,6 +189,7 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setFourWeight.setTitle(squatWeekThreeWeight, for: .normal)
             setFiveWeight.setTitle(squatWeekThreeWeight, for: .normal)
             resetSwitches()
+
         }
         
         else if exercise == "Squat" && week == "Week 4" {
@@ -331,7 +334,20 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
             setFiveWeight.setTitle(benchpressWeekFourWeight, for: .normal)
             resetSwitches()
         }
-           
+   
+    }
+    
+    func updateSaveButtonTextColor() {
+        if setOneSwitch.isOn == true &&
+           setTwoSwitch.isOn == true &&
+           setThreeSwitch.isOn == true &&
+           setFourSwitch.isOn == true &&
+           setFiveSwitch.isOn == true {
+           saveWorkoutButton.setTitleColor(.orange, for: .normal)
+        } else {
+           saveWorkoutButton.setTitleColor(.darkGray, for: .normal)
+            
+        }
         
     }
     
@@ -342,9 +358,16 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
         setThreeSwitch.isOn = false
         setFourSwitch.isOn = false
         setFiveSwitch.isOn = false
+        
+        setOneWeight.setTitleColor(.darkGray, for: .normal)
+        setTwoWeight.setTitleColor(.darkGray, for: .normal)
+        setThreeWeight.setTitleColor(.darkGray, for: .normal)
+        setFourWeight.setTitleColor(.darkGray, for: .normal)
+        setFiveWeight.setTitleColor(.darkGray, for: .normal)
+        saveWorkoutButton.setTitleColor(.darkGray, for: .normal)
     }
     
-    
+
     
     // dismisses the number pad when tapped outside of it's field
     override func touchesBegan(_ touches: Set<UITouch>,
@@ -356,48 +379,92 @@ class ViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSo
     
     
     @IBAction func saveWorkoutButton(_ sender: Any) {
-        guard let title = setOneWeight.currentTitle, !title.isEmpty else {
-           return
+        
+        if setOneSwitch.isOn == true &&
+            setTwoSwitch.isOn == true &&
+            setThreeSwitch.isOn == true &&
+            setFourSwitch.isOn == true &&
+            setFiveSwitch.isOn == true {
+            guard let title = setOneWeight.currentTitle, !title.isEmpty else {
+                return
+            }
+            
+            guard let exercise = trainingLabel.text, !exercise.isEmpty else {
+                return
+            }
+            
+            
+            let todo = Todo(context: managedContext)
+            todo.title = title
+            todo.date = Date()
+            todo.exercise = trainingLabel.text
+            
+            
+            
+            do {
+                try managedContext.save()
+            } catch {
+                print ("Error saving todo: \(error)")
+            }
+            
+            dismiss(animated: true)
+            
         }
-        
-        guard let exercise = trainingLabel.text, !exercise.isEmpty else {
-            return
-        }
-        
-        
-        let todo = Todo(context: managedContext)
-        todo.title = title
-        todo.date = Date()
-        todo.exercise = trainingLabel.text
-        
-        
-        
-        do {
-            try managedContext.save()
-        } catch {
-            print ("Error saving todo: \(error)")
-        }
-        
-        dismiss(animated: true)
         
     }
     
-    /*
-    func getCurrentDateTime(){
-        let formatter = DateFormatter()
-        formatter.dateFormat = "dd.MM.yy"
-        dateAndTime = formatter.string(from: Date ())
-        
-    }
-    */
-    
-    
+
 
     @IBAction func setSixWeightButton(_ sender: Any) {
         
     }
     
     
+    
+    @IBAction func setOneWeightSwitch(_ sender: Any) {
+        if setOneSwitch.isOn == false {
+            setOneWeight.setTitleColor(.darkGray, for: .normal)
+        } else {
+            setOneWeight.setTitleColor(.white, for: .normal)
+        }
+        updateSaveButtonTextColor()
+    }
+    
+    @IBAction func setTwoWeightSwitch(_ sender: Any) {
+        if setTwoSwitch.isOn == false {
+            setTwoWeight.setTitleColor(.darkGray, for: .normal)
+        } else {
+            setTwoWeight.setTitleColor(.white, for: .normal)
+        }
+        updateSaveButtonTextColor()
+    }
+    
+    @IBAction func setThreeWeightSwitch(_ sender: Any) {
+        if setThreeSwitch.isOn == false {
+            setThreeWeight.setTitleColor(.darkGray, for: .normal)
+        } else {
+            setThreeWeight.setTitleColor(.white, for: .normal)
+        }
+        updateSaveButtonTextColor()
+    }
+    
+    @IBAction func setFourWeightSwitch(_ sender: Any) {
+        if setFourSwitch.isOn == false {
+            setFourWeight.setTitleColor(.darkGray, for: .normal)
+        } else {
+            setFourWeight.setTitleColor(.white, for: .normal)
+        }
+        updateSaveButtonTextColor()
+    }
+    
+    @IBAction func setFiveWeightSwitch(_ sender: Any) {
+        if setFiveSwitch.isOn == false {
+            setFiveWeight.setTitleColor(.darkGray, for: .normal)
+        } else {
+            setFiveWeight.setTitleColor(.white, for: .normal)
+        }
+        updateSaveButtonTextColor()
+    }
     
     
     
