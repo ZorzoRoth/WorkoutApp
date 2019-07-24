@@ -31,6 +31,7 @@
 		D02878C922DA67E5002FA3FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D02878CC22DA67E5002FA3FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D02878CE22DA67E5002FA3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D02BF6C622E91DF300B8E319 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
 		D035907E22E36A950027E2F9 /* WorkoutLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogTableViewController.swift; sourceTree = "<group>"; };
 		D08C6C4822DBF3810074F736 /* SquatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatModel.swift; sourceTree = "<group>"; };
 		D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverheadpressModel.swift; sourceTree = "<group>"; };
@@ -93,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				D0CAD52222E7C21500339409 /* SF-Pro-Display-Regular.otf */,
+				D02BF6C622E91DF300B8E319 /* SF-Pro-Display-Thin.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
