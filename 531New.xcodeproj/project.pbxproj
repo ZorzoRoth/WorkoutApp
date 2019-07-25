@@ -12,6 +12,8 @@
 		D02878C822DA67E4002FA3FF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02878C622DA67E4002FA3FF /* Main.storyboard */; };
 		D02878CA22DA67E5002FA3FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D02878C922DA67E5002FA3FF /* Assets.xcassets */; };
 		D02878CD22DA67E5002FA3FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D02878CB22DA67E5002FA3FF /* LaunchScreen.storyboard */; };
+		D02BF6CA22E92A4500B8E319 /* SF-Pro-Text-Ultralight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D02BF6C922E92A4100B8E319 /* SF-Pro-Text-Ultralight.otf */; };
+		D02BF6CB22E92A6500B8E319 /* SF-Pro-Display-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = D02BF6C622E91DF300B8E319 /* SF-Pro-Display-Thin.otf */; };
 		D035907F22E36A950027E2F9 /* WorkoutLogTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D035907E22E36A950027E2F9 /* WorkoutLogTableViewController.swift */; };
 		D08C6C4922DBF3810074F736 /* SquatModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C6C4822DBF3810074F736 /* SquatModel.swift */; };
 		D08C6C4B22DBF39D0074F736 /* OverheadpressModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */; };
@@ -32,6 +34,7 @@
 		D02878CC22DA67E5002FA3FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D02878CE22DA67E5002FA3FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D02BF6C622E91DF300B8E319 /* SF-Pro-Display-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Thin.otf"; sourceTree = "<group>"; };
+		D02BF6C922E92A4100B8E319 /* SF-Pro-Text-Ultralight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Text-Ultralight.otf"; sourceTree = "<group>"; };
 		D035907E22E36A950027E2F9 /* WorkoutLogTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutLogTableViewController.swift; sourceTree = "<group>"; };
 		D08C6C4822DBF3810074F736 /* SquatModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SquatModel.swift; sourceTree = "<group>"; };
 		D08C6C4A22DBF39D0074F736 /* OverheadpressModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverheadpressModel.swift; sourceTree = "<group>"; };
@@ -95,6 +98,7 @@
 			children = (
 				D0CAD52222E7C21500339409 /* SF-Pro-Display-Regular.otf */,
 				D02BF6C622E91DF300B8E319 /* SF-Pro-Display-Thin.otf */,
+				D02BF6C922E92A4100B8E319 /* SF-Pro-Text-Ultralight.otf */,
 			);
 			path = Fonts;
 			sourceTree = "<group>";
@@ -177,8 +181,10 @@
 			files = (
 				D02878CD22DA67E5002FA3FF /* LaunchScreen.storyboard in Resources */,
 				D02878CA22DA67E5002FA3FF /* Assets.xcassets in Resources */,
+				D02BF6CB22E92A6500B8E319 /* SF-Pro-Display-Thin.otf in Resources */,
 				D0CAD52322E7C21500339409 /* SF-Pro-Display-Regular.otf in Resources */,
 				D02878C822DA67E4002FA3FF /* Main.storyboard in Resources */,
+				D02BF6CA22E92A4500B8E319 /* SF-Pro-Text-Ultralight.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
